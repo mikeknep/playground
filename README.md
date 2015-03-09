@@ -18,3 +18,16 @@ Currently very much a work in progress.
 - `gem install bundler`
 - `bundle install`
 - `rake db:create db:migrate db:test:prepare`
+
+### Chef provisioner
+**What it does**
+- symlinks dotfiles
+- installs rbenv and ruby-build
+- clones down vundle
+
+**What isn't working yet**
+- install vundle plugins
+- install mysql
+
+### Docker provisioner
+**Coming soon!**

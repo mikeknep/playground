@@ -12,5 +12,16 @@ Vagrant.configure(2) do |config|
 
   config.ssh.forward_agent = true
 
-  config.vm.provision :shell, path: "script.sh"
+  # config.vm.provision :shell, path: "script.sh"
+  config.vm.provision :chef_solo do |chef|
+    chef.add_recipe "get_started"
+    chef.add_recipe "dotfiles"
+    chef.add_recipe "ruby::rbenv"
+    chef.add_recipe "ruby::ruby_build"
+    chef.add_recipe "vundle::get_it"
+
+    # NOT WORKING!
+    # chef.add_recipe "vundle::use_it"
+    # chef.add_recipe "mysql"
+  end
 end
