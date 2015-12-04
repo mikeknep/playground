@@ -28,7 +28,7 @@ install_vundle() {
 }
 
 install_rbenv() {
-  if ! type rbenv > /dev/null 2>&1; then
+  if ! type ruby-build > /dev/null 2>&1; then
     git clone https://github.com/sstephenson/rbenv.git .rbenv
     git clone https://github.com/sstephenson/ruby-build.git .ruby-build
     echo Installing ruby-build
