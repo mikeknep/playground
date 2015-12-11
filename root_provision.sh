@@ -32,7 +32,20 @@ install_mysql() {
   fi
 }
 
+install_postgres() {
+  if ! type psql > /dev/null 2>&1; then
+    echo Installing postgres
+    apt-get -qqy install postgresql libpq-dev
+    mkdir -p /usr/local/pgsql/data
+    chown postgres:postgres /usr/local/pgsql/data
+    sudo -u postgres /usr/lib/postgresql/9.3/bin/initdb -D /usr/local/pgsql/data
+    sudo -u postgres psql -c "CREATE USER vagrant WITH CREATEDB SUPERUSER;"
+  fi
+}
+
+
 update_apt_get
 install_essentials
 install_swift
 install_mysql
+install_postgres
