@@ -43,9 +43,23 @@ install_postgres() {
   fi
 }
 
+install_redis() {
+  if [ ! -d "/home/vagrant/redis-stable" ]; then
+    echo Installing redis
+    wget http://download.redis.io/redis-stable.tar.gz
+    tar xvzf redis-stable.tar.gz
+    cd redis-stable
+    make
+    make install
+    cd ..
+    rm redis-stable.tar.gz
+  fi
+}
+
 
 update_apt_get
 install_essentials
 install_swift
 install_mysql
 install_postgres
+install_redis
