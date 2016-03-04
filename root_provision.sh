@@ -23,6 +23,15 @@ install_swift() {
   fi
 }
 
+install_julia() {
+  if ! type julia > /dev/null 2>&1; then
+    add-apt-repository ppa:staticfloat/juliareleases
+    add-apt-repository ppa:staticfloat/julia-deps
+    apt-get update
+    apt-get install julia
+  fi
+}
+
 install_mysql() {
   if ! type mysql > /dev/null 2>&1; then
     echo Installing mysql
@@ -54,6 +63,15 @@ install_redis() {
     make install
     cd ..
     rm redis-stable.tar.gz
+  fi
+}
+
+install_rabbitmq() {
+  if ! type rabbitmq-server > /dev/null 2>&1; then
+    echo Installing rabbitmq
+    echo "deb http://www.rabbitmq.com/debian testing main" >> /etc/apt/sources.list
+    apt-get -qq update
+    apt-get -y --force-yes install rabbitmq-server
   fi
 }
 
