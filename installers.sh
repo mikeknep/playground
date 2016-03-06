@@ -74,11 +74,3 @@ install_rabbitmq() {
     apt-get -y --force-yes install rabbitmq-server
   fi
 }
-
-
-update_apt_get
-install_essentials
-install_swift
-install_mysql
-install_postgres
-install_redis
