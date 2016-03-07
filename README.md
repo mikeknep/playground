@@ -1,4 +1,4 @@
-# VM
+# Playground
 
 A virtual machine for miscellaneous development.
 Write code locally in the `sandbox/` directory and execute it on the VM.

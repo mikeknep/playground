@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-. /home/vagrant/vm.h/installers.sh
+. /home/vagrant/playground.h/installers.sh
 
 update_apt_get
 install_essentials
