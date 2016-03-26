@@ -15,11 +15,11 @@ install_essentials() {
 install_swift() {
   if [ ! -d "/home/vagrant/swift" ]; then
     echo Installing swift
-    curl -s https://swift.org/builds/ubuntu1404/swift-2.2-SNAPSHOT-2015-12-01-b/swift-2.2-SNAPSHOT-2015-12-01-b-ubuntu14.04.tar.gz > swift-2.2.tar.gz
+    curl -s https://swift.org/builds/swift-2.2-release/ubuntu1404/swift-2.2-RELEASE/swift-2.2-RELEASE-ubuntu14.04.tar.gz > swift-2.2.tar.gz
     mkdir swift
     tar -zxf swift-2.2.tar.gz -C swift/
     rm swift-2.2.tar.gz
-    echo 'export PATH=/home/vagrant/swift/swift-2.2-SNAPSHOT-2015-12-01-b-ubuntu14.04/usr/bin/:$PATH' >> .bashrc
+    echo 'export PATH=/home/vagrant/swift/swift-2.2-RELEASE-ubuntu14.04/usr/bin/:$PATH' >> .bashrc
   fi
 }
 
